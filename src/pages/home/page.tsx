@@ -106,7 +106,7 @@ export default function Home() {
                 <span className="inline-block">안녕하세요,</span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-                  박해빈11
+                  박해빈
                 </span>
                 <span className="inline-block">입니다</span>
               </h1>
@@ -116,8 +116,8 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Chip variant="blue">React</Chip>
-                <Chip variant="purple">Node.js</Chip>
-                <Chip variant="pink">Python</Chip>
+                <Chip variant="purple">Vue</Chip>
+                <Chip variant="pink">Next.js</Chip>
                 <Chip variant="indigo">TypeScript</Chip>
               </div>
               <div className="flex space-x-4 pt-4">
@@ -150,18 +150,11 @@ export default function Home() {
                 {/* Main Content */}
                 <div className="relative z-10 text-center space-y-6">
                   <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transform transition-all duration-500">
-                    <i className="ri-code-line text-white text-5xl"></i>
+                    <span className="text-5xl">👩🏻‍💻</span>
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm hover:scale-110 transform transition-all duration-300 animate-slide-in-left" style={{animationDelay: '0.9s'}}>
-                      <i className="ri-database-2-line text-purple-500 text-xl"></i>
-                      <span className="text-sm font-medium text-gray-700">Database</span>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-gray-800 animate-fade-up">풀스택 개발자</h3>
-                    </div>
+                      <h3 className="text-2xl font-bold text-gray-800 animate-fade-up">프론트엔드 개발자</h3>
                   </div>
                 </div>
               </div>
