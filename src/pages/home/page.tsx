@@ -106,7 +106,7 @@ export default function Home() {
                 <span className="inline-block">안녕하세요,</span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-                  박해빈
+                  박해빈11
                 </span>
                 <span className="inline-block">입니다</span>
               </h1>
