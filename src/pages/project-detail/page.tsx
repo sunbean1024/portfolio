@@ -224,6 +224,21 @@ export default function ProjectDetail() {
                   ))}
                 </div>
               </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                  <i className="ri-trophy-line text-purple-600 mr-3"></i>
+                  주요 기여
+                </h2>
+                <div className="space-y-4">
+                  {project.contributions.map((contribution, index) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-green-50 rounded-lg hover:scale-105 transform transition-all duration-300">
+                      <i className="ri-check-line text-green-500 text-xl mt-0.5"></i>
+                      <span className="text-gray-700 leading-relaxed">{contribution}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Right Column */}
@@ -245,14 +260,14 @@ export default function ProjectDetail() {
 
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                  <i className="ri-trophy-line text-purple-600 mr-3"></i>
-                  주요 성과
+                  <i className="ri-lightbulb-line text-purple-600 mr-3"></i>
+                  프로젝트 회고
                 </h2>
                 <div className="space-y-4">
-                  {project.achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-4 bg-green-50 rounded-lg hover:scale-105 transform transition-all duration-300">
-                      <i className="ri-check-line text-green-500 text-xl mt-0.5"></i>
-                      <span className="text-gray-700 leading-relaxed">{achievement}</span>
+                  {project.reflection.map((reflection, index) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg hover:scale-105 transform transition-all duration-300">
+                      <i className="ri-lightbulb-line text-purple-500 text-xl mt-0.5"></i>
+                      <span className="text-gray-700 leading-relaxed">{reflection}</span>
                     </div>
                   ))}
                 </div>

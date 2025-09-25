@@ -1,5 +1,5 @@
 import butterLogo from '@/assets/images/logos/butter-logo.png';
-import zeranLogo from '@/assets/images/logos/jiransoft-logo.png';
+import jiranLogo from '@/assets/images/logos/jiransoft-logo.png';
 
 export interface Company {
   name: string;
@@ -20,10 +20,11 @@ export interface Project {
   role: string;
   teamSize: string;
   challenges: string[];
-  achievements: string[];
+  contributions: string[];
   images: string[];
   githubUrl: string;
   liveUrl: string;
+  reflection: string[];
 }
 
 export const companies: Company[] = [
@@ -39,159 +40,43 @@ export const companies: Company[] = [
     position: "프론트엔드 개발자 | 사원",
     period: "2018.12 - 2022.07",
     description: "프론트엔드와 백엔드를 모두 담당하며 다양한 프로젝트 경험",
-    logo: zeranLogo
+    logo: jiranLogo
   },
 ];
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: "E-Commerce 플랫폼 개발",
-    description: "React와 Node.js를 활용한 대규모 쇼핑몰 시스템 구축. 결제 시스템, 재고 관리, 사용자 관리 등 전반적인 기능 개발을 담당했습니다.",
-    detailedDescription: "이 프로젝트는 월 1만명 이상의 사용자가 이용하는 대규모 E-commerce 플랫폼입니다. 프론트엔드부터 백엔드, 데이터베이스 설계까지 전체 아키텍처를 담당했으며, 특히 결제 시스템의 안정성과 보안에 중점을 두어 개발했습니다. Stripe API를 연동하여 안전한 결제 환경을 구축했고, Redis를 활용한 세션 관리와 캐싱으로 성능을 최적화했습니다.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "Stripe", "Redis", "AWS"],
-    period: "2023.03 - 2023.12",
-    role: "Lead Frontend Developer",
-    teamSize: "5명",
-    challenges: [
-      "대용량 트래픽 처리를 위한 성능 최적화",
-      "실시간 재고 관리 시스템 구현",
-      "다양한 결제 방식 통합",
-      "모바일 반응형 디자인 구현"
+    "id": 1,
+    "title": "LG유플러스 멤버십 통합 서비스",
+    "description": "LG유플러스 멤버십 앱 기능을 유플닷컴으로 내재화한 앱 내 웹뷰 기반 통합 서비스로, 네이티브 앱 업데이트 없이도 실시간 기능 배포와 크로스 플랫폼 호환성을 확보한 하이브리드 아키텍처를 구현했습니다.",
+    "detailedDescription": "이 프로젝트는 월 10만명 이상의 VIP 고객이 이용하는 대규모 멤버십 플랫폼입니다. VIP콕, 멤버십 사용처, 유플투쁠 이벤트 등 핵심 기능들을 웹뷰로 통합하여 사용자 경험을 일원화했습니다. 특히 iOS WebView 환경에서 발생하는 복잡한 렌더링 이슈를 해결하고, 대기열 시스템을 통해 동시 접속자 급증 시에도 안정적인 서비스를 제공합니다. React Suspense와 TanStack Query를 활용한 상태 관리 최적화, 무한스크롤 페이지네이션 구현, 그리고 VVIP/VIP 차등 정책에 따른 복잡한 사용자 상태 관리까지 전체 프론트엔드 아키텍처를 담당했습니다.",
+    "tech": ["Next.js 14", "React 18", "TypeScript", "Zustand", "TanStack Query", "SCSS", "NX", "Playwright", "Storybook"],
+    "period": "2024.03 - 2025.01",
+    "role": "Frontend Developer",
+    "teamSize": "4명",
+    "challenges": [
+        "iOS WebView 백화 현상 해결 (position: sticky GPU 컴포지팅 레이어 이슈)",
+        "대기열 시스템 구현 및 무한로딩 현상 해결",
+        "VVIP/VIP 차등 정책에 따른 복잡한 사용자 상태 관리",
+        "동시 접속자 급증 시 서버 부하 및 사용자 대기 문제",
+        "앱 업데이트 없이 실시간 기능 배포를 위한 웹뷰 최적화"
     ],
-    achievements: [
-      "페이지 로딩 속도 40% 개선",
-      "결제 성공률 98% 달성",
-      "모바일 사용자 증가 200%",
-      "사용자 만족도 4.8/5.0 달성"
+    "contributions": [
+        "iOS WebView 렌더링 이슈 해결로 앱 업데이트 없이도 안정적 서비스 제공",
+        "대기열 시스템 구현으로 동시 접속자 급증 시 서버 다운 방지",
+        "VIP콕 서비스 개발로 VIP 고객 만족도 향상 및 혜택 이용률 증대",
+        "무한스크롤 페이지네이션 최적화로 페이지 로딩 성능 30% 개선",
+        "React Suspense 적용으로 서브 페이지 렌더링 단위 분리 및 사용자 경험 개선"
     ],
-    images: [
-      "https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20homepage%20with%20product%20grid%2C%20shopping%20cart%20interface%2C%20clean%20white%20background%2C%20purple%20and%20blue%20accent%20colors%2C%20professional%20UI%20design%2C%20desktop%20view&width=800&height=500&seq=detail1-1&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=e-commerce%20product%20detail%20page%20with%20large%20product%20images%2C%20reviews%20section%2C%20add%20to%20cart%20button%2C%20modern%20UI%20design%2C%20white%20background%20with%20soft%20shadows&width=800&height=500&seq=detail1-2&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=shopping%20cart%20checkout%20process%20interface%2C%20payment%20form%2C%20order%20summary%2C%20secure%20payment%20design%2C%20clean%20modern%20layout%2C%20professional%20e-commerce%20design&width=800&height=500&seq=detail1-3&orientation=landscape"
-    ],
-    githubUrl: "https://github.com/example/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.example.com",
-    imageUrl: "https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20with%20clean%20design%2C%20shopping%20cart%2C%20product%20listings%2C%20pastel%20blue%20and%20purple%20color%20scheme%2C%20professional%20UI%2FUX%20design%2C%20minimalist%20layout%2C%20white%20background%20with%20soft%20shadows&width=400&height=300&seq=project1&orientation=landscape"
+    "images": [],
+    "githubUrl": "",
+    "liveUrl": "",
+    "imageUrl": "",
+    "reflection": [
+        "이 프로젝트를 통해 가장 큰 깨달음은 '문제의 본질을 파악하는 것의 중요성'이었습니다. iOS WebView 백화 현상을 해결할 때, 처음에는 데이터 로딩 문제로 오해하고 글로벌 로딩 컴포넌트를 제거하고 React Suspense를 적용하는 등 여러 시행착오를 겪었습니다. 하지만 결국 브라우저 렌더링 파이프라인 문제라는 근본 원인을 찾아내고, position: sticky 요소의 GPU 컴포지팅 레이어 생성 과정에서 iOS WebKit의 paint invalidation 실패가 원인임을 파악할 수 있었습니다.",
+        "또한 '단순한 해결책이 때로는 최고의 해결책'이라는 것을 배웠습니다. 복잡한 CSS 변경이나 DOM 조작 대신 window.scrollTo()라는 단순한 API로 문제를 해결할 수 있었던 것처럼, 과도한 엔지니어링보다는 문제의 핵심을 정확히 파악하는 것이 중요하다는 것을 깨달았습니다. 이는 앞으로 어떤 기술적 도전을 만나더라도 근본 원인을 찾아내는 사고방식을 기르는 데 큰 도움이 되었습니다.",
+        "기술적으로는 React/Next.js 생태계의 깊이를 이해하게 되었고, 특히 Suspense와 Error Boundary를 활용한 에러 처리, TanStack Query의 캐싱 전략, 그리고 WebView 환경의 특수성을 고려한 개발 방법론을 익힐 수 있었습니다. 대기열 시스템 구현 과정에서 useEffect 의존성 배열 관리의 중요성과, 무한스크롤에서 메모리 누수 방지를 위한 가비지 컬렉션 최적화 등 실무에서 바로 적용할 수 있는 구체적인 기술들을 습득했습니다.",
+        "팀 협업 측면에서는 복잡한 이슈를 체계적으로 분석하고 해결하는 과정에서 동료들과의 소통과 지식 공유의 중요성을 다시 한번 느꼈습니다. 특히 iOS WebView 이슈 해결 과정에서 팀원들과 함께 문제를 분석하고, 다양한 접근 방법을 시도해보며 최종 해결책을 찾아가는 과정에서 팀워크의 가치를 깊이 체감했습니다. 앞으로도 이런 협업을 통해 더 나은 솔루션을 만들어갈 수 있을 것 같습니다."
+    ]
   },
-  {
-    id: 2,
-    title: "모바일 앱 개발",
-    description: "React Native를 사용한 크로스 플랫폼 모바일 애플리케이션 개발. 실시간 채팅, 위치 기반 서비스, 푸시 알림 등을 구현했습니다.",
-    detailedDescription: "소셜 네트워킹 기능이 포함된 위치 기반 모바일 애플리케이션입니다. 사용자들이 실시간으로 소통하고, 주변 친구들을 찾을 수 있는 기능을 제공합니다. Firebase를 활용한 실시간 데이터베이스와 Socket.io를 통한 실시간 채팅 시스템을 구현했으며, 푸시 알림으로 사용자 참여도를 높였습니다.",
-    tech: ["React Native", "Firebase", "Redux", "TypeScript", "Socket.io", "Google Maps API"],
-    period: "2022.08 - 2023.02",
-    role: "Mobile App Developer",
-    teamSize: "3명",
-    challenges: [
-      "iOS와 Android 플랫폼 동시 지원",
-      "실시간 위치 추적 최적화",
-      "배터리 효율성 개선",
-      "오프라인 모드 구현"
-    ],
-    achievements: [
-      "앱스토어 평점 4.6/5.0 달성",
-      "다운로드 수 10만+ 돌파",
-      "일일 활성 사용자 5,000명",
-      "배터리 사용량 30% 최적화"
-    ],
-    images: [
-      "https://readdy.ai/api/search-image?query=mobile%20app%20interface%20with%20chat%20messages%2C%20location%20map%2C%20user%20profiles%2C%20modern%20UI%20design%2C%20smartphone%20mockup%2C%20clean%20interface%20design&width=800&height=500&seq=detail2-1&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=mobile%20app%20map%20interface%20showing%20user%20locations%2C%20GPS%20tracking%2C%20social%20features%2C%20modern%20mobile%20UI%2C%20location-based%20app%20design&width=800&height=500&seq=detail2-2&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=mobile%20app%20notification%20screen%2C%20push%20notifications%2C%20user%20engagement%20features%2C%20modern%20app%20interface%2C%20clean%20mobile%20design&width=800&height=500&seq=detail2-3&orientation=landscape"
-    ],
-    githubUrl: "https://github.com/example/social-location-app",
-    liveUrl: "https://apps.apple.com/app/social-location",
-    imageUrl: "https://readdy.ai/api/search-image?query=mobile%20app%20interface%20mockup%20on%20smartphone%20screen%2C%20modern%20UI%20design%2C%20chat%20messages%2C%20location%20services%2C%20pastel%20pink%20and%20blue%20colors%2C%20clean%20minimalist%20design%2C%20white%20background%20with%20subtle%20gradients&width=400&height=300&seq=project2&orientation=landscape"
-  },
-  {
-    id: 3,
-    title: "데이터 시각화 대시보드",
-    description: "D3.js와 React를 활용한 실시간 데이터 시각화 대시보드 구축. 복잡한 데이터를 직관적인 차트와 그래프로 표현했습니다.",
-    detailedDescription: "기업의 비즈니스 인텔리전스를 위한 실시간 데이터 시각화 대시보드입니다. 다양한 데이터 소스에서 수집된 정보를 실시간으로 처리하고, 인터랙티브한 차트와 그래프로 표현하여 경영진의 의사결정을 지원합니다. 사용자 맞춤형 대시보드 구성과 데이터 드릴다운 기능을 제공합니다.",
-    tech: ["React", "D3.js", "Python", "PostgreSQL", "Flask", "WebSocket", "Chart.js"],
-    period: "2022.01 - 2022.07",
-    role: "Full Stack Developer",
-    teamSize: "4명",
-    challenges: [
-      "대용량 데이터 실시간 처리",
-      "복잡한 차트 인터랙션 구현",
-      "다양한 데이터 소스 통합",
-      "반응형 대시보드 레이아웃"
-    ],
-    achievements: [
-      "데이터 처리 속도 50% 향상",
-      "사용자 맞춤 대시보드 100% 구현",
-      "실시간 업데이트 지연시간 1초 이내",
-      "클라이언트 만족도 95% 달성"
-    ],
-    images: [
-      "https://readdy.ai/api/search-image?query=business%20intelligence%20dashboard%20with%20multiple%20charts%2C%20graphs%2C%20KPI%20widgets%2C%20modern%20analytics%20interface%2C%20clean%20white%20background%2C%20professional%20data%20visualization&width=800&height=500&seq=detail3-1&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=interactive%20data%20visualization%20with%20pie%20charts%2C%20bar%20graphs%2C%20line%20charts%2C%20modern%20dashboard%20UI%2C%20business%20analytics%2C%20professional%20design&width=800&height=500&seq=detail3-2&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=real-time%20data%20monitoring%20dashboard%2C%20live%20charts%2C%20analytics%20widgets%2C%20modern%20business%20interface%2C%20clean%20professional%20design&width=800&height=500&seq=detail3-3&orientation=landscape"
-    ],
-    githubUrl: "https://github.com/example/data-dashboard",
-    liveUrl: "https://dashboard-demo.example.com",
-    imageUrl: "https://readdy.ai/api/search-image?query=data%20visualization%20dashboard%20with%20beautiful%20charts%20and%20graphs%2C%20analytics%20interface%2C%20pastel%20purple%20and%20blue%20color%20palette%2C%20modern%20business%20dashboard%2C%20clean%20white%20background%2C%20professional%20data%20visualization&width=400&height=300&seq=project3&orientation=landscape"
-  },
-  {
-    id: 4,
-    title: "AI 챗봇 시스템",
-    description: "자연어 처리를 활용한 고객 서비스 챗봇 개발. 머신러닝 모델을 통해 사용자 의도를 파악하고 적절한 응답을 제공합니다.",
-    detailedDescription: "자연어 처리와 머신러닝을 활용한 지능형 고객 서비스 챗봇 시스템입니다. 사용자의 질문 의도를 정확히 파악하고, 문맥을 이해하여 개인화된 응답을 제공합니다. 지속적인 학습을 통해 응답 품질이 향상되며, 관리자 인터페이스를 통해 챗봇 성능을 모니터링할 수 있습니다.",
-    tech: ["Python", "TensorFlow", "Flask", "MySQL", "NLP", "BERT", "Docker"],
-    period: "2021.06 - 2021.12",
-    role: "AI/ML Developer",
-    teamSize: "6명",
-    challenges: [
-      "자연어 이해 정확도 향상",
-      "다양한 언어 지원",
-      "실시간 응답 성능 최적화",
-      "챗봇 학습 데이터 관리"
-    ],
-    achievements: [
-      "자연어 이해 정확도 92% 달성",
-      "응답 시간 평균 2초 이내",
-      "고객 만족도 88% 향상",
-      "운영 비용 40% 절감"
-    ],
-    images: [
-      "https://readdy.ai/api/search-image?query=AI%20chatbot%20interface%20with%20conversation%20bubbles%2C%20modern%20chat%20UI%2C%20artificial%20intelligence%20assistant%2C%20clean%20messaging%20design%2C%20professional%20customer%20service&width=800&height=500&seq=detail4-1&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=chatbot%20analytics%20dashboard%20showing%20conversation%20metrics%2C%20AI%20performance%20data%2C%20customer%20satisfaction%20scores%2C%20modern%20admin%20interface&width=800&height=500&seq=detail4-2&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=machine%20learning%20model%20training%20interface%2C%20NLP%20processing%20visualization%2C%20AI%20development%20tools%2C%20technical%20dashboard%20design&width=800&height=500&seq=detail4-3&orientation=landscape"
-    ],
-    githubUrl: "https://github.com/example/ai-chatbot",
-    liveUrl: "https://chatbot-demo.example.com",
-    imageUrl: "https://readdy.ai/api/search-image?query=AI%20chatbot%20interface%20with%20conversation%20bubbles%2C%20modern%20chat%20UI%20design%2C%20artificial%20intelligence%20assistant%2C%20pastel%20blue%20and%20pink%20colors%2C%20clean%20messaging%20interface%2C%20white%20background&width=400&height=300&seq=project4&orientation=landscape"
-  },
-  {
-    id: 5,
-    title: "블록체인 NFT 마켓플레이스",
-    description: "Web3 기술을 활용한 NFT 거래 플랫폼 개발. 스마트 컨트랙트와 메타마스크 연동을 통한 안전한 디지털 자산 거래 시스템을 구축했습니다.",
-    detailedDescription: "블록체인 기술을 기반으로 한 NFT(Non-Fungible Token) 마켓플레이스 플랫폼입니다. 아티스트들이 자신의 디지털 작품을 NFT로 민팅하고 판매할 수 있으며, 수집가들은 안전하게 디지털 자산을 구매하고 소유할 수 있습니다. 이더리움 블록체인과 IPFS를 활용하여 탈중앙화된 시스템을 구축했습니다.",
-    tech: ["React", "Web3.js", "Solidity", "Ethereum", "IPFS", "MetaMask", "OpenSea API"],
-    period: "2023.01 - 2023.06",
-    role: "Blockchain Developer",
-    teamSize: "4명",
-    challenges: [
-      "스마트 컨트랙트 보안 강화",
-      "높은 가스비 최적화",
-      "복잡한 Web3 UX 개선",
-      "크로스체인 호환성 구현"
-    ],
-    achievements: [
-      "누적 거래량 500 ETH 달성",
-      "가스비 최적화로 30% 비용 절감",
-      "일일 활성 사용자 2,000명",
-      "스마트 컨트랙트 보안 감사 통과"
-    ],
-    images: [
-      "https://readdy.ai/api/search-image?query=NFT%20marketplace%20interface%20with%20digital%20art%20gallery%2C%20blockchain%20technology%2C%20crypto%20wallet%20integration%2C%20modern%20web3%20design%2C%20pastel%20purple%20and%20blue%20colors%2C%20clean%20futuristic%20layout%2C%20white%20background&width=800&height=500&seq=detail5-1&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=NFT%20collection%20showcase%20with%20digital%20artwork%2C%20blockchain%20transaction%20interface%2C%20cryptocurrency%20payment%2C%20modern%20marketplace%20UI%2C%20clean%20web3%20design&width=800&height=500&seq=detail5-2&orientation=landscape",
-      "https://readdy.ai/api/search-image?query=blockchain%20smart%20contract%20interface%2C%20ethereum%20wallet%20connection%2C%20NFT%20minting%20process%2C%20crypto%20trading%20platform%2C%20professional%20web3%20design&width=800&height=500&seq=detail5-3&orientation=landscape"
-    ],
-    githubUrl: "https://github.com/example/nft-marketplace",
-    liveUrl: "https://nft-marketplace-demo.example.com",
-    imageUrl: "https://readdy.ai/api/search-image?query=NFT%20marketplace%20interface%20with%20digital%20art%20gallery%2C%20blockchain%20technology%2C%20crypto%20wallet%20integration%2C%20modern%20web3%20design%2C%20pastel%20purple%20and%20blue%20colors%2C%20clean%20futuristic%20layout%2C%20white%20background&width=400&height=300&seq=project5&orientation=landscape"
-  }
 ];
