@@ -17,8 +17,16 @@ export default function ExperienceSection({ companies }: ExperienceSectionProps)
                   <img 
                     src={company.logo}
                     alt={`${company.name} 로고`}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-contain rounded-xl shadow-sm border border-gray-100"
+                    onError={(e) => {
+                      // 이미지 로드 실패 시 기본 아이콘 표시
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                    }}
                   />
+                  <div className="w-full h-full rounded-xl bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-lg hidden shadow-sm border border-gray-100">
+                    {company.name.charAt(0)}
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2 hover:text-purple-600 transition-colors duration-300">{company.name}</h3>

@@ -1,3 +1,6 @@
+import butterLogo from '@/assets/images/logos/butter-logo.png';
+import zeranLogo from '@/assets/images/logos/jiransoft-logo.png';
+
 export interface Company {
   name: string;
   position: string;
@@ -17,18 +20,18 @@ export interface Project {
 
 export const companies: Company[] = [
   {
-    name: "테크이노베이션",
-    position: "시니어 프론트엔드 개발자",
-    period: "2022.03 - 2024.01",
+    name: "버터",
+    position: "프론트엔드 개발자 | 대리",
+    period: "2024.03 - 재직중",
     description: "대규모 웹 애플리케이션 개발 및 팀 리딩 경험",
-    logo: "https://readdy.ai/api/search-image?query=modern%20tech%20company%20logo%20design%2C%20innovative%20technology%20symbol%2C%20pastel%20blue%20and%20purple%20gradient%2C%20clean%20minimalist%20corporate%20identity%2C%20professional%20business%20logo%2C%20white%20background&width=100&height=100&seq=company1&orientation=squarish"
+    logo: butterLogo
   },
   {
-    name: "디지털솔루션즈",
-    position: "풀스택 개발자",
-    period: "2020.01 - 2022.02",
+    name: "지란지교소프트",
+    position: "프론트엔드 개발자 | 사원",
+    period: "2018.12 - 2022.07",
     description: "프론트엔드와 백엔드를 모두 담당하며 다양한 프로젝트 경험",
-    logo: "https://readdy.ai/api/search-image?query=digital%20solutions%20company%20logo%2C%20modern%20software%20development%20symbol%2C%20pastel%20pink%20and%20blue%20colors%2C%20professional%20corporate%20branding%2C%20minimalist%20design%2C%20white%20background&width=100&height=100&seq=company2&orientation=squarish"
+    logo: zeranLogo
   },
 ];
 
