@@ -68,11 +68,18 @@ export default function ProjectsSection({
                   </button>
                 </div>
               </div>
-              <div className="h-80 md:h-full overflow-hidden">
+              <div className="h-80 md:h-96 overflow-hidden bg-gray-100 flex items-center justify-center relative" style={{ height: '36rem' }}>
                 <img 
                   src={projects[currentProject].imageUrl}
                   alt={projects[currentProject].title}
-                  className="w-full h-full object-cover object-top hover:scale-110 transform transition-all duration-700"
+                  className="object-contain hover:scale-105 transform transition-all duration-700"
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '100%', 
+                    width: 'auto', 
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
                 />
               </div>
             </div>

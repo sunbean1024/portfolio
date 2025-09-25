@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Chip from '@/components/common/Chip';
+import resumePdf from '@/assets/documents/haebeen_ resume.pdf';
 
 interface HeroSectionProps {
   isVisible: boolean;
@@ -11,6 +12,13 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
   useEffect(() => {
     setAnimationDelay(300);
   }, []);
+
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = resumePdf;
+    link.download = '박해빈_이력서.pdf';
+    link.click();
+  };
 
   return (
     <section id="about" className="pt-20 pb-16 px-6">
@@ -36,11 +44,11 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
               <Chip variant="indigo">TypeScript</Chip>
             </div>
             <div className="flex space-x-4 pt-4">
-              <button className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-8 py-3 rounded-full font-medium hover-shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer whitespace-nowrap animate-pulse">
+              <button 
+                onClick={handleDownloadResume}
+                className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-8 py-3 rounded-full font-medium hover-shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer whitespace-nowrap animate-pulse"
+              >
                 이력서 다운로드
-              </button>
-              <button className="border-2 border-purple-300 text-purple-600 px-8 py-3 rounded-full font-medium hover-bg-purple-50 hover:scale-105 transform transition-all duration-300 cursor-pointer whitespace-nowrap">
-                연락하기
               </button>
             </div>
           </div>

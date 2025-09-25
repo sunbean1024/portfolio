@@ -112,9 +112,6 @@ export default function ProjectDetail() {
               <span className="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
                 {project.role}
               </span>
-              <span className="text-sm font-medium text-pink-600 bg-pink-100 px-3 py-1 rounded-full">
-                팀 규모: {project.teamSize}
-              </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
               {project.title}
