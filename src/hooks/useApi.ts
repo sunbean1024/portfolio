@@ -37,6 +37,16 @@ export const useProject = (id: number) => {
   });
 };
 
+// Other Projects Hook
+export const useOtherProjects = (excludeId: number) => {
+  return useQuery({
+    queryKey: [...queryKeys.projects, 'others', excludeId],
+    queryFn: () => mockApi.getOtherProjects(excludeId),
+    enabled: !!excludeId,
+    staleTime: 1000 * 60 * 5, // 5분
+  });
+};
+
 // Combined Hook for Home Page
 export const useHomeData = () => {
   const companiesQuery = useCompanies();
@@ -48,5 +58,19 @@ export const useHomeData = () => {
     isLoading: companiesQuery.isLoading || projectsQuery.isLoading,
     isError: companiesQuery.isError || projectsQuery.isError,
     error: companiesQuery.error || projectsQuery.error,
+  };
+};
+
+// Combined Hook for Project Detail Page
+export const useProjectDetailData = (id: number) => {
+  const projectQuery = useProject(id);
+  const otherProjectsQuery = useOtherProjects(id);
+
+  return {
+    project: projectQuery.data,
+    otherProjects: otherProjectsQuery.data || [],
+    isLoading: projectQuery.isLoading || otherProjectsQuery.isLoading,
+    isError: projectQuery.isError || otherProjectsQuery.isError,
+    error: projectQuery.error || otherProjectsQuery.error,
   };
 };

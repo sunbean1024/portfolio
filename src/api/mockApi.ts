@@ -34,6 +34,12 @@ export const mockApi = {
     await new Promise(resolve => setTimeout(resolve, 200));
     console.log(`Project ${id} updated:`, data);
     return projects.find(project => project.id === id) || null;
+  },
+
+  // 다른 프로젝트들 가져오기 (현재 프로젝트 제외)
+  getOtherProjects: async (excludeId: number): Promise<Project[]> => {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    return projects.filter(project => project.id !== excludeId);
   }
 };
 
