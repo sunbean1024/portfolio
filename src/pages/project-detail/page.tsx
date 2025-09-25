@@ -102,7 +102,7 @@ export default function ProjectDetail() {
       <Header showBackButton={true} backButtonText="돌아가기" />
 
       {/* Project Header */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className={`text-center space-y-6 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex items-center justify-center space-x-4 mb-4">
@@ -151,42 +151,63 @@ export default function ProjectDetail() {
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
-              <img 
-                src={project.images[currentImageIndex]}
-                alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              
-              {/* Image Navigation */}
-              <button 
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
-              >
-                <i className="ri-arrow-left-line text-gray-700 text-xl"></i>
-              </button>
-              <button 
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
-              >
-                <i className="ri-arrow-right-line text-gray-700 text-xl"></i>
-              </button>
-
-              {/* Image Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {project.images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                      index === currentImageIndex 
-                        ? 'bg-white w-8' 
-                        : 'bg-white/50 hover:bg-white/80'
-                    }`}
+            <div className="relative h-[400px] md:h-[450px] lg:h-[500px] bg-gray-100 flex items-center justify-center">
+              {project.images && project.images.length > 0 ? (
+                <>
+                  <img 
+                    src={project.images[currentImageIndex]}
+                    alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
+                    className="max-w-full max-h-full object-contain hover:scale-105 transform transition-all duration-700"
+                    style={{ 
+                      maxWidth: '100%', 
+                      maxHeight: '100%',
+                      width: 'auto',
+                      height: 'auto'
+                    }}
                   />
-                ))}
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </>
+              ) : (
+                <div className="text-center space-y-4">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i className="ri-image-line text-4xl text-gray-400"></i>
+                  </div>
+                  <p className="text-gray-500 text-lg font-medium">이미지 준비 중</p>
+                </div>
+              )}
+              
+              {/* Image Navigation - Only show when images exist */}
+              {project.images && project.images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
+                  >
+                    <i className="ri-arrow-left-line text-gray-700 text-xl"></i>
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
+                  >
+                    <i className="ri-arrow-right-line text-gray-700 text-xl"></i>
+                  </button>
+
+                  {/* Image Indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {project.images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                          index === currentImageIndex 
+                            ? 'bg-white w-8' 
+                            : 'bg-white/50 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -301,12 +322,21 @@ export default function ProjectDetail() {
             <div className="grid md:grid-cols-3 gap-8 transition-all duration-500 ease-in-out">
               {getVisibleProjects().map((otherProject) => (
                 <div key={otherProject.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transform transition-all duration-500">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={otherProject.images[0]}
-                      alt={otherProject.title}
-                      className="w-full h-full object-cover object-top hover:scale-110 transform transition-all duration-700"
-                    />
+                  <div className="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                    {otherProject.images && otherProject.images.length > 0 ? (
+                      <img 
+                        src={otherProject.images[0]}
+                        alt={otherProject.title}
+                        className="w-full h-full object-cover object-top hover:scale-110 transform transition-all duration-700"
+                      />
+                    ) : (
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <i className="ri-image-line text-xl text-gray-400"></i>
+                        </div>
+                        <p className="text-gray-500 text-sm font-medium">이미지 준비 중</p>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-2">{otherProject.title}</h3>

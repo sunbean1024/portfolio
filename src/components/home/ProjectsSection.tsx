@@ -69,18 +69,27 @@ export default function ProjectsSection({
                 </div>
               </div>
               <div className="h-80 md:h-96 overflow-hidden bg-gray-100 flex items-center justify-center relative" style={{ height: '36rem' }}>
-                <img 
-                  src={projects[currentProject].imageUrl}
-                  alt={projects[currentProject].title}
-                  className="object-contain hover:scale-105 transform transition-all duration-700"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%', 
-                    width: 'auto', 
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
+                {projects[currentProject].imageUrl ? (
+                  <img 
+                    src={projects[currentProject].imageUrl}
+                    alt={projects[currentProject].title}
+                    className="object-contain hover:scale-105 transform transition-all duration-700"
+                    style={{ 
+                      maxWidth: '100%', 
+                      maxHeight: '100%', 
+                      width: 'auto', 
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                ) : (
+                  <div className="text-center space-y-4">
+                    <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <i className="ri-image-line text-4xl text-gray-400"></i>
+                    </div>
+                    <p className="text-gray-500 text-lg font-medium">이미지 준비 중</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
