@@ -16,7 +16,7 @@ export default function Header({ showBackButton = false, backButtonText = "돌�
             onClick={() => navigate('/')}
             className="font-bold text-2xl text-purple-600 hover:scale-105 transform transition-all duration-300 cursor-pointer"
           >
-            포트폴리오
+            ☀️
           </button>
           
           {showBackButton ? (

@@ -139,7 +139,7 @@ export default function ProjectDetail() {
                   className="flex items-center space-x-2 bg-gradient-to-r from-blue-400 to-purple-400 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transform transition-all duration-300 cursor-pointer whitespace-nowrap"
                 >
                   <i className="ri-external-link-line text-xl"></i>
-                  <span>라이브 데모</span>
+                  <span>링크</span>
                 </a>
               )}
             </div>
@@ -151,7 +151,7 @@ export default function ProjectDetail() {
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="relative h-96 md:h-[500px]">
+            <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
               <img 
                 src={project.images[currentImageIndex]}
                 alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}

@@ -34,8 +34,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
               <span className="inline-block">입니다</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed animate-fade-in-up">
-              프론트엔드 개발자로서 Vue와 React로 웹 애플리케이션을 만들고 있습니다.
-              사내 개발 문화 개선과 웹 접근성 향상을 고민하며, 사용자와 동료에 가까이 다가가는 제품을 지향합니다.
+             보안성과 실시간성이 중요한 웹/데스크톱 환경에서 Vue와 React 기반의 UI 및 상태 관리, 그리고 글로벌 대응을 경험 했습니다. 웹 접근성 향상을 고민하며, 사용자가 편리하게 이용할 수 있는 제품을 만드는 것을 지향합니다.
             </p>
             <div className="flex flex-wrap gap-4">
               <Chip variant="blue">React</Chip>
