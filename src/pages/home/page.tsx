@@ -1,9 +1,9 @@
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Chip from '../../components/Chip';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import Chip from '@/components/common/Chip';
 
 export default function Home() {
   const [currentProject, setCurrentProject] = useState(0);
