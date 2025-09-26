@@ -4,6 +4,9 @@ import lgu1 from '@/assets/images/projects/lgu1.png';
 import lgu2 from '@/assets/images/projects/lgu2.png';
 import xkeeper1 from '@/assets/images/projects/xkeeper1.png';
 import xkeeper2 from '@/assets/images/projects/xkeeper2.png';
+import gosajang2 from '@/assets/images/projects/gosajang2.png';
+import gosajang1 from '@/assets/images/projects/gosajang1.png';
+
 
 export interface Company {
   name: string;
@@ -94,10 +97,10 @@ export const projects: Project[] = [
       "WebContents → WebView: UI 가려짐 문제 해결을 위한 아키텍처 개선",
       "실시간 상태 모니터링: 웹캠, 화면공유, 스마트폰 연결 상태 실시간 표시"
     ],
-    "images": [],
+    "images": [gosajang2],
     "githubUrl": "",
     "liveUrl": "https://gosajang.io/",
-    "imageUrl": "",
+    "imageUrl": gosajang2,
     "reflection": [
       "기술적으로는 Electron 생태계의 깊이를 이해하게 되었고, 특히 네이티브 모듈 통합, IPC 통신, 크로스 플랫폼 개발의 복잡성을 경험했습니다. Rust와 TypeScript를 함께 사용하면서 각 언어의 장점을 살린 하이브리드 개발 방법론을 익힐 수 있었고, Inspector 패턴을 활용한 확장 가능한 보안 모듈 아키텍처 설계 능력을 기를 수 있었습니다.",
       "WebContents의 한계를 극복하기 위해 WebView로 변환하면서, Electron의 다양한 렌더링 방식을 이해하게 되었습니다. WebContents는 메인 프로세스에서 직접 제어되어 UI 레이어 분리가 불가능했지만, WebView는 독립적인 렌더링 컨텍스트를 제공하여 브라우저 UI와 웹 콘텐츠를 완전히 분리할 수 있었습니다. 특히 WebView의 이벤트 처리(did-finish-load, will-navigate)와 조건부 렌더링을 통한 메모리 최적화 방법을 익히면서, Electron의 IPC 통신 시스템과 멀티 탭 환경에서의 성능 최적화 기법을 습득할 수 있었습니다."
@@ -122,10 +125,10 @@ export const projects: Project[] = [
       "vue3-grid-layout-next를 활용한 동적 화면 배치 및 실시간 레이아웃 조정 구현",
       "실시간 채팅, 알림, 상태 변경을 통한 감독 효율성 향상 및 사용자 경험 개선",
     ],
-    "images": [],
+    "images": [gosajang2],
     "githubUrl": "",
     "liveUrl": "https://gosajang.io/",
-    "imageUrl": "",
+    "imageUrl": gosajang2,
     "reflection": [
       "프로젝트에서 구현에서 문제를 겪었던 일은 '실시간 미디어 스트림 처리의 복잡성'이었습니다. WebRTC 멀티 스트림 관리에서 스트림 동기화와 DOM 참조 문제를 해결할 때, 단순히 코드 로직만 수정하는 것이 아니라 `nextTick`을 활용한 비동기 DOM 업데이트와 동적 ref 할당까지 전체적인 아키텍처를 이해해야 해결할 수 있다는 것을 배웠습니다. 특히 `createLayout` 함수에서 `videoRefs.value[newItemIndex]`를 참조할 때 발생하는 타이밍 이슈를 해결하기 위해 `await nextTick()`을 사용하여 DOM 업데이트를 보장하는 과정에서, 실시간 시스템에서는 예측하기 어려운 타이밍 이슈들이 발생하므로 전체적인 흐름을 파악하는 것이 중요하다는 것을 깨달았습니다.",
       "또한 '폴링과 소켓 통신의 장단점 분석'을 통해 최적의 통신 방식을 선택하는 과정에서 시스템 아키텍처 설계의 중요성을 배웠습니다. 기존 폴링 방식에서 5초마다 API를 호출하던 것을 Socket.IO 기반 실시간 통신으로 전환하여 네트워크 트래픽을 감소시키고 응답 속도를 개선할 수 있었습니다. 이 과정에서 기술적 선택이 비즈니스 성과에 미치는 영향을 직접 경험할 수 있었습니다.",
@@ -178,10 +181,10 @@ export const projects: Project[] = [
       "복잡한 시간축 관리 시스템: 서로 다른 시작/종료 시간을 가진 비디오들을 하나의 타임라인으로 통합하여 관리",
       "실시간 이벤트 마킹: 감독 메모, 채팅 등 이벤트를 타임라인에 시각적으로 표시하고 해당 시점으로 즉시 이동 가능"
     ],
-    "images": [],
+    "images": [gosajang1],
     "githubUrl": "",
     "liveUrl": "https://gosajang.io/",
-    "imageUrl": "",
+    "imageUrl": gosajang1,
     "reflection": [
         "PC화면, 정면감독, 주변감독 3개 카메라의 영상을 실시간으로 동기화하여 재생하는 멀티 비디오 플레이어를 개발했습니다. 서로 다른 시작/종료 시간을 가진 비디오들을 하나의 타임라인으로 통합하기 위해, 각 비디오의 절대 시작 시간을 기준으로 상대적 재생 위치를 계산하는 Unix 타임스탬프 기반 시간축 알고리즘을 구현했습니다. 이 알고리즘은 전체 재생 시간에서 각 비디오의 시작 시점을 빼고 기준 시간을 더하여 정확한 재생 위치를 계산하며, 현재 재생 시점에 따라 적절한 비디오만 화면에 표시하는 조건부 렌더링 시스템과 실시간 볼륨 제어 기능을 함께 개발했습니다."
     ]
