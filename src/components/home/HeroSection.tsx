@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Chip from '@/components/common/Chip';
-import resumePdf from '@/assets/documents/haebeen_ resume.pdf';
+import resumePdf from '@/assets/documents/haebeen_resume.pdf';
 
 interface HeroSectionProps {
   isVisible: boolean;
