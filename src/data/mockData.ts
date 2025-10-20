@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     "id": 1,
     "title": "LG유플러스 멤버십 통합 서비스",
-    "description": "LG유플러스 멤버십 앱 기능을 유플닷컴으로 내재화한 앱 내 웹뷰 기반 통합 서비스 입니다.",
+    "description": "당신의 U+ 앱 내 고객을 위한 다양한 할인, 혜택, 이벤트 정보를 한눈에 확인하고 이용할 수 있는 웹뷰 기반 통합 서비스 입니다.",
     "detailedDescription": "VIP콕, 멤버십 사용처, 유플투쁠 이벤트 등 핵심 기능들을 웹뷰로 통합하여 사용자 경험을 일원화했습니다. React Suspense와 TanStack Query를 활용한 상태 관리 최적화, 무한스크롤 페이지네이션 구현, 그리고 멤버십 차등 정책에 따른 복잡한 사용자 상태 관리까지 VIP콕 프론트엔드를 담당했습니다.",
     "tech": ["Next.js", "React", "TypeScript", "Zustand", "SCSS", "Storybook"],
     "period": "2024.12 - 진행중",
