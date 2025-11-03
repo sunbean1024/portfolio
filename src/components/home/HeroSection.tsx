@@ -42,14 +42,14 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
               <Chip variant="pink">Next.js</Chip>
               <Chip variant="indigo">TypeScript</Chip>
             </div>
-            <div className="flex space-x-4 pt-4">
+            {/* <div className="flex space-x-4 pt-4">
               <button 
                 onClick={handleDownloadResume}
                 className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-8 py-3 rounded-full font-medium hover-shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer whitespace-nowrap animate-pulse"
               >
                 이력서 다운로드
               </button>
-            </div>
+            </div> */}
           </div>
           
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
